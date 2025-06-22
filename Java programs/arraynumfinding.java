@@ -2,18 +2,14 @@ public class arraynumfinding {
     public static boolean numfinding(int matrix[][], int key){
         int count = 0;
 
-
-        for(int row = 0; row < matrix.length; row++){
-            for(int colm = 0; colm < matrix[row].length; colm++){
-            
-                if(matrix[row][colm] == key){
-                    count++;
+        for(int i = 0; i < matrix.length; i ++){
+            for(int j = 0; j < matrix[0].length; j++){
+                if(key == matrix[i][j]){
+                    count ++;
                 }
-            
             }
         }
-
-        System.out.println("Number of 7s :" + count);
+        System.out.println("No. of 7s :" + count);
         return true;
     }
 
