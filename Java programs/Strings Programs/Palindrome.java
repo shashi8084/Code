@@ -11,7 +11,7 @@ public class Palindrome {
     }
 
     public static void main(String[] args) {
-        String str = "noon";
+        String str = "123456";
         System.out.println(isPalindrome(str));
     }
 }

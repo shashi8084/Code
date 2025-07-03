@@ -1,0 +1,92 @@
+Name: Shashi Shekhar Sharma
+College: Ajeenkya DY Patil University
+Course: B.tech CSE (Cyber Security)
+Batch: 2026
+Phone number: 6207981278
+Email ID: shashishekhar9507@gmail.com
+
+
+
+
+1. Find Duplicates in an Array
+Write a program to find and return all duplicate elements in an 
+array.Example: Input: [1, 2, 3, 4, 3, 2, 5]
+Output: [2, 3]
+
+
+
+import java.util.*;
+public class duplicate {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 3, 2, 5};
+        int n = arr.length;
+
+        System.out.print("[ ");
+        for (int i = 0; i < n; i++) {
+            boolean isDuplicate = false;
+            for (int j = 0; j < i; j++) {
+                if (arr[i] == arr[j]) {
+                    isDuplicate = true; 
+                    break;
+                }
+            }
+            if (!isDuplicate) {
+                for (int k = i + 1; k < n; k++) {
+                    if (arr[i] == arr[k]) {
+                        System.out.print(arr[i] + " ");
+                        break;
+                    }
+                }
+            }
+        }
+        System.out.println("]");
+    }
+}
+
+
+
+
+
+3. Word Frequency Counter
+Write a function that takes a string and returns the frequency of each word. 
+Ignorecase sensitivity.
+Example:
+Input: "This is a test. This test is easy."
+Output: { "this": 2, "is": 2, "a": 1, "test": 2, "easy": 1}
+
+
+class fequencytest {
+    public static void main(String[] args) {
+        String text = "This is a test. This test is easy.";
+        text = text.toLowerCase().replaceAll("[^a-z\\s]", ""); 
+        String[] words = text.split("\\s+"); 
+
+        
+        String[] uniqueWords = new String[words.length];
+        int[] counts = new int[words.length];
+        int uniqueCount = 0;
+
+        for (String word : words) {
+            boolean found = false;
+            for (int i = 0; i < uniqueCount; i++) {
+                if (uniqueWords[i].equals(word)) {
+                    counts[i]++;
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                uniqueWords[uniqueCount] = word;
+                counts[uniqueCount] = 1;
+                uniqueCount++;
+            }
+        }
+
+        System.out.print("{ ");
+        for (int i = 0; i < uniqueCount; i++) {
+            System.out.print("\"" + uniqueWords[i] + "\": " + counts[i]);
+            if (i < uniqueCount - 1) System.out.print(", ");
+        }
+        System.out.println(" }");
+    }
+}
